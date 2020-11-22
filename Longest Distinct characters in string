@@ -1,0 +1,32 @@
+#include <iostream>
+#include<vector>
+#include<map>
+using namespace std;
+
+int len(string s){
+    int res = 0; //result
+    int i=0;
+    int n= s.size();
+    vector<int> lastIndex(256,-1);
+    for(int j=0;j<n;j++){
+        i = max(i,lastIndex[s[j]]+1);
+        res = max(res, j-i+1);
+        lastIndex[s[j]] = j;
+//        cout<<lastIndex[s[j]]<<" "<<s[j]<<" "<<i<<" "<<j<<endl;
+    }
+    return res;
+}
+
+int main() {
+	//code
+    int t;
+    cin>>t;
+    while(t--){
+        string s;
+        cin>>s;
+        int l;
+        l = len(s);
+        cout<<l<<endl;
+        }
+	return 0;
+}
