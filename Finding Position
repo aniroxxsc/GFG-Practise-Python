@@ -1,0 +1,8 @@
+t = int(input(""))
+while t!=0:
+    n = int(input(""))
+    re = 0;
+    t-=1
+    while(2**(re+1)<n):
+        re+=1
+    print(2**re)
